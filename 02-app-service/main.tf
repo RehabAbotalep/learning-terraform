@@ -12,12 +12,12 @@ terraform {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "AppServiceRG"
-  location = "West Europe"
+  name     = var.resource_group_name
+  location = var.resource_group_location
 }
 
 resource "azurerm_app_service_plan" "sp" {
-  name                = "example-appserviceplan"
+  name                = var.app_service_plan_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
 
@@ -28,7 +28,7 @@ resource "azurerm_app_service_plan" "sp" {
 }
 
 resource "azurerm_app_service" "as" {
-  name                = "terraform-webapp-lab"
+  name                = var.app_service_name
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   app_service_plan_id = azurerm_app_service_plan.sp.id
