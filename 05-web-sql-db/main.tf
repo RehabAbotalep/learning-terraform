@@ -1,6 +1,6 @@
 provider "azurerm" {
   features {
-    
+
   }
 }
 
