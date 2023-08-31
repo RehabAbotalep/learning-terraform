@@ -6,3 +6,4 @@
 |2                 |[App Service](./02-app-service)                                           |
 |3                 |[Web App & SQL Database](./05-web-sql-db)                                 |
 |4                 |[AKS cluster](./06-kubernetes-aks/)                                       |
+|5                 |[AKS & ACR](./07-aks-acr/)                                                |
