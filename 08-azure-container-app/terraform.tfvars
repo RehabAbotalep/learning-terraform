@@ -1,0 +1,5 @@
+resource_group_name     = "ContainerAppRG"
+resource_group_location = "West Europe"
+log_analytics_name      = "workspace-aca"
+aca-environment         = "aca-environment"
+aca_name                = "aca-0102"
