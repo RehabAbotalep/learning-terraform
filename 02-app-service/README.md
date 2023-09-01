@@ -1,8 +1,10 @@
-# Deploying Resource Groups
+# Deploying Azure App Service
 
 The terraform config file will create the following resources:
 
 1. Resource Group
+2. App Service Plan
+3. Azure App Service
 
 To deploy this config:
 

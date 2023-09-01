@@ -1,8 +1,9 @@
-# Deploying Resource Groups
+# Deploying AKS cluster
 
 The terraform config file will create the following resources:
 
 1. Resource Group
+2. AKS cluster
 
 To deploy this config:
 

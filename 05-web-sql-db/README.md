@@ -1,8 +1,12 @@
-# Deploying Resource Groups
+# Deploying Azure App Service & SQL Database
 
 The terraform config file will create the following resources:
 
 1. Resource Group
+2. App Service Plan
+3. Azure App Service
+4. SQL Server
+5. SQL Database
 
 To deploy this config:
 
