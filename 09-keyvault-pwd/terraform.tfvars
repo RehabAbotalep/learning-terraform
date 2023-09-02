@@ -1,5 +1,5 @@
 resource_group_name     = "KeyVaultRG"
 resource_group_location = "West Europe"
-keyvault_name           = "keyvault010203"
-secret_name             = "DatabasePassword"
+keyvault_name           = "keyvault0102"
+secret_name             = "Password"
 secret_value            = "P@ssw0rd1234!"
