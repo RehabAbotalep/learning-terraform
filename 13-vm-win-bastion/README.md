@@ -1,4 +1,4 @@
-# Deploying Key Vault and Secrets
+# Deploying Windows VM & Bastion host
 
 The Terraform configuration in `main.tf` automates the provisioning of Azure resources required to create a Windows VM, set up Azure Bastion for secure remote access, and install the IIS web server on the VM.
 

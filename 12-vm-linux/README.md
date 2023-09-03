@@ -1,4 +1,4 @@
-# Deploying Key Vault and Secrets
+# Deploying Linux VM
 
 The Terraform configuration in `main.tf` provisions Azure resources required to create a Linux virtual machine with SSH access and boot diagnostics. 
 

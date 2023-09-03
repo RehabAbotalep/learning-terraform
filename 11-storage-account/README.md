@@ -1,4 +1,4 @@
-# Deploying Key Vault and Secrets
+# Deploying Storage Account
 
 The Terraform configuration in `main.tf` provisions Azure resources for storing a file ("commands.sh") in a specific storage blob within a storage container, all within a specified resource group and storage account. 
 
