@@ -10,5 +10,6 @@
 |6                 |[Azure Container App](./08-azure-container-app/)              |
 |7                 |[Key Vault](./09-keyvault-access-policy/)                     |
 |8                 |[Key Vault with RBAC](./10-keyvault-rbac/)                    |
-|8                 |[Storage Account, Container, and Blob](./11-storage-account/) |
-|8                 |[Linux VM](./12-vm-linux/)                                    |
+|9                 |[Storage Account, Container, and Blob](./11-storage-account/) |
+|10                |[Linux VM](./12-vm-linux/)                                    |
+|11                |[Windows VM & Bastion host](./13-vm-win-bastion/)             |

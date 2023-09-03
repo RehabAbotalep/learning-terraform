@@ -1,0 +1,6 @@
+resource_group_name     = "vms-rg"
+resource_group_location = "West Europe"
+virtual_network_name    = "vnet"
+subnet_name             = "subnet"
+network_interface_name  = "nic"
+windows_vm_name         = "windows10"
