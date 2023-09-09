@@ -1,0 +1,67 @@
+{
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG",
+		"resource_type": "azurerm_resource_group",
+		"resource_name": "res-0"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203",
+		"resource_type": "azurerm_mssql_server",
+		"resource_name": "res-1"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/ProductsDB": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/ProductsDB",
+		"resource_type": "azurerm_mssql_database",
+		"resource_name": "res-11"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/ProductsDB/extendedAuditingSettings/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/ProductsDB/extendedAuditingSettings/Default",
+		"resource_type": "azurerm_mssql_database_extended_auditing_policy",
+		"resource_name": "res-22"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/master/extendedAuditingSettings/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/databases/master/extendedAuditingSettings/Default",
+		"resource_type": "azurerm_mssql_database_extended_auditing_policy",
+		"resource_name": "res-31"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/devOpsAuditingSettings/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/devOpsAuditingSettings/Default",
+		"resource_type": "azurerm_mssql_server_microsoft_support_auditing_policy",
+		"resource_name": "res-37"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/encryptionProtector/current": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/encryptionProtector/current",
+		"resource_type": "azurerm_mssql_server_transparent_data_encryption",
+		"resource_name": "res-38"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/extendedAuditingSettings/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/extendedAuditingSettings/Default",
+		"resource_type": "azurerm_mssql_server_extended_auditing_policy",
+		"resource_name": "res-39"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/securityAlertPolicies/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/securityAlertPolicies/Default",
+		"resource_type": "azurerm_mssql_server_security_alert_policy",
+		"resource_name": "res-41"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/vulnerabilityAssessments/Default": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Sql/servers/terraform-sqlserver-010203/vulnerabilityAssessments/Default",
+		"resource_type": "azurerm_mssql_server_vulnerability_assessment",
+		"resource_name": "res-43"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/serverFarms/example-appservice-plan": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/serverfarms/example-appservice-plan",
+		"resource_type": "azurerm_service_plan",
+		"resource_name": "res-44"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/sites/appservice-010203": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/sites/appservice-010203",
+		"resource_type": "azurerm_windows_web_app",
+		"resource_name": "res-45"
+	},
+	"/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/sites/appservice-010203/hostNameBindings/appservice-010203.azurewebsites.net": {
+		"resource_id": "/subscriptions/8097991a-5a10-4f4d-9493-8b90f6dede29/resourceGroups/WebAppSqlRG/providers/Microsoft.Web/sites/appservice-010203/hostNameBindings/appservice-010203.azurewebsites.net",
+		"resource_type": "azurerm_app_service_custom_hostname_binding",
+		"resource_name": "res-49"
+	}
+}
