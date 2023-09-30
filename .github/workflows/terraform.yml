@@ -35,6 +35,7 @@ jobs:
   
   deploy-infra-terraform:
     name: Deploy Infra to Azure with Terraform
+    permissions: write-all
     runs-on: ubuntu-latest
     needs: [scan-terraform-config]
 
