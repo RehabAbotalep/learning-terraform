@@ -11,7 +11,7 @@ on:
 
 
 env:
-  STORAGE_ACCOUNT_NAME: tfstatestorage012
+  STORAGE_ACCOUNT_NAME: storagetfstate2430002090
   RESOURCE_GROUP_NAME: terrform-state-rg
   CONTAINER_NAME: tfstate
   BLOB_NAME: terraform.tfstate
