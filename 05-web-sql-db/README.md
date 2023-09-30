@@ -22,3 +22,7 @@ terraform plan -out tfplan
 terraform apply tfplan
 
 ```
+
+# Deploying Azure App Service & SQL Database with Terraform & GitHub Action
+
+You can find the YAML file within the following directory: `.github/workflows/terraform.yml`

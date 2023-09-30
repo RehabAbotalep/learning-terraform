@@ -14,3 +14,4 @@
 |10                |[Linux VM](./12-vm-linux/)                                               |
 |11                |[Windows VM & Bastion host](./13-vm-win-bastion/)                        |
 |12                |[Import existing infrastructure into Terraform](./17-import-resources/)  |
+|13                |[Delpoy Infra with Terraform and GitHub Action](./05-web-sql-db/)  |
