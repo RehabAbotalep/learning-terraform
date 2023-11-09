@@ -4,7 +4,7 @@ The `-replace` option is used with terraform apply to replace resources. When a 
 
 This option is only available from Terraform `v0.15.2` onwards. For earlier versions, use `terraform taint` to achieve a similar result.
 
-![Replace Option](../../source/images/replace.gif)
+![Replace Option](../../../images/replace-option.gif)
 
 ## Documentation
 
