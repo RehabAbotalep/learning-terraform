@@ -6,3 +6,6 @@ resource "aws_instance" "first-ec2" {
     Name = "first-ec2"
   }
 }
+
+
+
