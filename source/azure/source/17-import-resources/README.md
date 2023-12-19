@@ -11,7 +11,7 @@ Terraform provides a native import resource functionality that allows you to bri
 
 2. **Using aztfexport:**
 
-`aztfexport` is a tool that streamlines the import process by not only bringing the resource into Terraform state but also generating the corresponding Terraform configuration files for you.
+`aztfexport:` is a tool that streamlines the import process by not only bringing the resource into Terraform state but also generating the corresponding Terraform configuration files for you.
 
 To use aztfexport, follow these steps:
 
