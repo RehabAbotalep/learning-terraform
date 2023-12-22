@@ -9,7 +9,28 @@ Terraform provides a native import resource functionality that allows you to bri
 
 `terraform import <resource_type>.<resource_name> <resource_id>`
 
-2. **Using aztfexport:**
+2. **Using Import blocks**
+
+Use the import block in Terraform to easily manage existing infrastructure. Unlike the terraform import it will generate the Terraform configuration (.tf) files for you.
+
+You can put an import block in any Terraform file. Usually, we create a file called imports.tf, or they just place the import block next to the resource block it's importing.
+
+```
+import {
+  to = aws_instance.example
+  id = "i-abcd1234"
+}
+
+```
+
+`to `: The instance address this resource will have in your state file.
+`id` : A string with the import ID of the resource.
+
+To generate the configuration file run the following command: `terraform plan -generate-config-out=generated_resources.tf`
+
+Then Run `terraform apply` to import your infrastructure.
+
+3. **Using aztfexport:**
 
 `aztfexport:` is a tool that streamlines the import process by not only bringing the resource into Terraform state but also generating the corresponding Terraform configuration files for you.
 
