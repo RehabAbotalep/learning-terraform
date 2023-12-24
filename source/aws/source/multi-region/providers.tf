@@ -5,4 +5,5 @@ provider "aws" {
 provider "aws" {
   alias  = "ohio"
   region = "us-east-2"
+  profile = "second-account"
 }
