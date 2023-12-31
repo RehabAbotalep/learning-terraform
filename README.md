@@ -10,25 +10,15 @@ Welcome to the "Learning Terraform" repository! This collection includes various
 | 2   | [AWS](./source/aws/README.md)         | AWS infrastructure examples.   |
 | 3   | [GitHub](./source/github/README.md)   | GitHub-related configurations. |
 
-## Configuration Sources
-
-### 1. Azure
-
-Explore Terraform configurations for provisioning resources on Microsoft Azure. These examples cover various scenarios.
-
-### 2. AWS
-
-Discover Terraform configurations for deploying infrastructure on Amazon Web Services (AWS).
-
-### 3. GitHub
-
-Learn how to use Terraform to manage GitHub repositories and related configurations.
-
 
 ## How to Use
 
 1. **Clone Repository**: Clone this repository to your local machine.
-2. **Navigate to Configuration Directory**: Move to the specific configuration directory you want to explore (e.g., `cd source/aws`).
+2. **Navigate to Configuration Directory**: Move to the specific configuration directory you want to explore (e.g., `cd source/aws/source/ec2`).
 3. **Initialize Terraform**: Run `terraform init` to set up the working directory.
 4. **Review and Apply**: Check the configuration files and run `terraform apply` to create resources.
 5. **Clean Up**: When finished, run `terraform destroy` to remove the created resources.
+
+## Resources
+
+[Terraform Documentation](https://developer.hashicorp.com/terraform)
