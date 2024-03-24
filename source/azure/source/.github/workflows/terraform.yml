@@ -1,0 +1,166 @@
+name: 'Deploy Infrastructure with Terraform'
+
+on:
+  # push:
+  #  branches: [main]
+  
+  # pull_request:
+  #  branches: [main]
+
+  workflow_dispatch:
+
+
+env:
+  STORAGE_ACCOUNT_NAME: storagetfstate2430002090
+  RESOURCE_GROUP_NAME: terrform-state-rg
+  CONTAINER_NAME: tfstate
+  BLOB_NAME: terraform.tfstate
+
+  WORKING_DIRECTORY: 05-web-sql-db
+
+jobs:
+  scan-terraform-config:
+    runs-on: ubuntu-latest
+    name: Scan Terraform with Checov
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@master
+
+      - name: Run Checov Scan
+        id: checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: ${{ env.WORKING_DIRECTORY }}
+          soft_fail: true # optional: do not return an error code if there are failed checks
+  
+  deploy-infra-terraform:
+    name: Deploy Infra to Azure with Terraform
+    permissions: write-all
+    runs-on: ubuntu-latest
+    needs: [scan-terraform-config]
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ${{ env.WORKING_DIRECTORY }}
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Login to Azure with Service Principle
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Create Terraform backend state storage
+      uses: azure/CLI@v1
+      with:
+        azcliversion: 2.30.0
+        inlineScript: |
+
+          az version
+
+          # Create resource group
+          az group create --name $RESOURCE_GROUP_NAME --location westeurope
+          
+          # Create storage account
+          az storage account create --name $STORAGE_ACCOUNT_NAME \
+             --resource-group $RESOURCE_GROUP_NAME \
+             --sku Standard_LRS \
+             --encryption-services blob
+          
+          # Create blob container
+          az storage container create --name $CONTAINER_NAME --account-name $STORAGE_ACCOUNT_NAME
+          
+          # generate backend.tf file
+          cd $WORKING_DIRECTORY
+          cat <<EOT > backend.tf
+          terraform {
+            backend "azurerm" {
+              resource_group_name   = "$RESOURCE_GROUP_NAME"
+              storage_account_name  = "$STORAGE_ACCOUNT_NAME"
+              container_name        = "$CONTAINER_NAME"
+              key                   = "$BLOB_NAME"
+            }
+          }
+          EOT
+          
+          cat backend.tf
+
+    - name: Install Terraform
+      uses: hashicorp/setup-terraform@v2
+      with:
+        terraform_version: 1.5.7
+
+    - name: Terraform Init
+      id: init
+      env:
+        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      run: |
+
+        terraform init
+
+    - name: Terraform Format
+      id: format
+      run: terraform fmt -check
+      continue-on-error: true
+
+    - name: Terraform Plan
+      id: plan
+      env:
+        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      if: github.event_name == 'pull_request'
+      run: |
+        terraform plan -no-color 
+
+    
+    - name: Add Terraform Plan Comment
+      id: comment
+      uses: actions/github-script@v6
+      if: github.event_name == 'pull_request'
+      env:
+        PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+
+          const output = `#### Terraform Format and Style 🖌\`${{ steps.format.outcome }}\`
+          #### Terraform Initialization ⚙️\`${{ steps.init.outcome }}\`
+          #### Terraform Validation 🤖${{ steps.validate.outputs.stdout }}
+          #### Terraform Plan 📖\`${{ steps.plan.outcome }}\`
+      
+          <details><summary>Show Plan</summary>
+          
+          \`\`\`${process.env.PLAN}\`\`\`
+          
+          </details>
+          
+          *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+            
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: output
+          })
+
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      env:
+        ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+        ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+        ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      run: terraform apply -auto-approve
+
+
+    
+    
