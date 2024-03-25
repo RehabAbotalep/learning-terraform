@@ -15,7 +15,7 @@ This collection covers a range of essential topics. Each link below leads to det
 | 9  | [Zipmap](./source/zipmap/README.md)                                        | Delve into the 'zipmap' function for advanced map manipulation.              |
 | 10 | [Conditional Expression](./source/conditional-expression/main.tf)          | Discover how to use conditional expressions effectively.                     |
 | 11 | [Backend](./source/backend/main.tf)                                        | Set up Terraform backends for collaborative and scalable workflows.          |
-| 12 | [Count Parameter](./source/count-parameter/main.tf)                        | Harness the power of the 'count' parameter in your configurations.           |
+| 12 | [Count Parameter](./source/count-paramter/main.tf)                        | Harness the power of the 'count' parameter in your configurations.           |
 | 13 | [Cross Reference Attribute](./source/cross-reference-attributes/README.md) | Learn to cross-reference attributes in Terraform.                            |
 | 14 | [Dynamic Block](./source/dynamic-block/main.tf)                            | Master dynamic block usage for flexible and dynamic configurations.          |
 | 15 | [EC2](./source/ec2/main.tf)                                                | Dive into managing EC2 instances using Terraform.                            |
