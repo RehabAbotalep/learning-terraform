@@ -8,7 +8,7 @@ Welcome to the "Learning Terraform" repository! This collection includes various
 | --- | ------------------------------------- | ------------------------------ |
 | 1   | [Azure](./source/azure/README.md)     | Azure infrastructure examples. |
 | 2   | [AWS](./source/aws/README.md)         | AWS infrastructure examples.   |
-| 3   | [GitHub](./source/github/README.md)   | GitHub-related configurations. |
+| 3   | [GitHub](./source/github/README.md)   | GitHub infrastructure examples.|
 
 
 ## How to Use
